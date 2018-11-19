@@ -15,6 +15,8 @@ public class Hardware
     public DcMotor frontRight;
     public DcMotor backRight;
 
+    public DcMotor elevatorLift;
+
 
     Telemetry telemetry;
     HardwareMap hwMap;
@@ -32,6 +34,8 @@ public class Hardware
         frontRight = hwMap.dcMotor.get("front right wheel");
         backLeft = hwMap.dcMotor.get("back left wheel");
         backRight = hwMap.dcMotor.get("back right wheel");
+
+        elevatorLift = hwMap.dcMotor.get("elevator lift motor");
 
         frontRight.setDirection(DcMotorSimple.Direction.REVERSE);
         backLeft.setDirection(DcMotorSimple.Direction.REVERSE);

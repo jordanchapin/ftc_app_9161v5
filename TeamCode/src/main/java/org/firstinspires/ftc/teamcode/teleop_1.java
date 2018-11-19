@@ -78,6 +78,15 @@ public class teleop_1 extends OpMode
         r.backLeft.setPower(power3);
         r.backRight.setPower(power4);
 
+        if (gamepad2.left_stick_y*-1 > 0)
+        {
+            r.elevatorLift.setPower(.8);
+        }
+        if (gamepad2.left_stick_y*-1 < 0)
+        {
+            r.elevatorLift.setPower(-.8);
+        }
+
     }
 
     @Override
