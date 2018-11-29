@@ -78,14 +78,22 @@ public class teleop_1 extends OpMode
         r.backLeft.setPower(power3);
         r.backRight.setPower(power4);
 
-        if (gamepad2.left_stick_y*-1 > 0)
+        if (gamepad2.left_stick_y*-1 > 0) {
+            r.elevatorLift.setPower(1);
+        }else if (gamepad2.left_stick_y*-1 < 0)
         {
-            r.elevatorLift.setPower(.8);
-        }
-        if (gamepad2.left_stick_y*-1 < 0)
+            r.elevatorLift.setPower(-1);
+        }else
+            r.elevatorLift.setPower(0);
+
+        if (gamepad2.right_trigger > .1)
         {
-            r.elevatorLift.setPower(-.8);
-        }
+            r.intakeSpinner.setPower(.6);
+        }else if (gamepad2.left_trigger > .1)
+        {
+            r.intakeSpinner.setPower(-.6);
+        }else
+            r.intakeSpinner.setPower(0);
 
     }
 
